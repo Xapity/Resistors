@@ -23,30 +23,33 @@ public class Resistors {
                 + "\nSerate each colour by hyphens");
         String[] colours = {"Black", "Brown", "Red", "Orange",
             "Yellow", "Green", "Blue", "Violet", "Grey", "White"};
-//set up 2d array with values next to each colour
+        //set up 2d array with values next to each colour
         for (int i = 0; i < 9; i++) {
             values[i] = i;
         }
-//set up 2d array with values next to each colour
+        //set up 2d array with values next to each colour
         String line = sn.nextLine();
         String[] inputs = line.split("-", 3);
         int sum, val1 = 0,val2 = 0,val3 = 0;
+        //value of val1
         for(int i = 0; i < 9; i++){
             if(inputs[0].equalsIgnoreCase(colours[i])){
                 val1 = values[i];
             }
         }
+        //value of val2
         for(int i = 0; i < 9; i++){
             if(inputs[1].equalsIgnoreCase(colours[i])){
                 val2 = values[i];
             }
         }
+        //value of val3
         for(int i = 0; i < 9; i++){
             if(inputs[2].equalsIgnoreCase(colours[i])){
                 val3 = values[i];
             }
         }
-        
+        //set sum and print the answer
         sum = (int) ((val1*10+val2)*(Math.pow(10,val3)));
         System.out.println(sum+ "ohms");
     }
